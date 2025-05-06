@@ -1,0 +1,15 @@
+<h1>Eldest director</h1>
+
+<p>
+  The eldest director in our dataset right now is
+  <%= link_to @eldest_director.name, "/directors/#{@eldest_director.id}" %>,
+  <% if @eldest_director.dob.present? %>
+    born on <%= @eldest_director.dob.strftime("%B %d, %Y") %>.
+  <% else %>
+    but their date of birth is unknown.
+  <% end %>
+</p>
+
+<p>
+  (<a href="http://strftime.net/">http://strftime.net/</a> is handy for putting together the formatting strings for the <code>.strftime</code> method.)
+</p>
